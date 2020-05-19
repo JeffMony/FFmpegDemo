@@ -70,6 +70,16 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'jeffmony.mp4':
     Metadata:
       handler_name    : SoundHandler
 ```
+##### 2.从视频中提取音频流
+具体见extractor_audio.c
+```
+gcc -g -o extractor_audio extractor_audio.c `pkg-config --libs --cflags libavutil libavformat libavcodec`
+```
+
+```
+./extractor_audio jeffmony.mp4 output.aac
+```
+将jeffmony.mp4中的音频流取出来，保存为output.aac
 
 
 
