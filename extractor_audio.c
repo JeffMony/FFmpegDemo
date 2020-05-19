@@ -187,11 +187,11 @@ int main(int argc, char *argv[])
      #define FF_PROFILE_MPEG2_AAC_HE  131
     */
 
-    int aac_type = fmt_ctx->streams[1]->codecpar->profile;
-    int channels = fmt_ctx->streams[1]->codecpar->channels;
-    int sample_rate= fmt_ctx->streams[1]->codecpar->sample_rate;
+    int aac_type = fmt_ctx->streams[audio_stream_index]->codecpar->profile;
+    int channels = fmt_ctx->streams[audio_stream_index]->codecpar->channels;
+    int sample_rate= fmt_ctx->streams[audio_stream_index]->codecpar->sample_rate;
 
-    if(fmt_ctx->streams[1]->codecpar->codec_id != AV_CODEC_ID_AAC){
+    if(fmt_ctx->streams[audio_stream_index]->codecpar->codec_id != AV_CODEC_ID_AAC){
         av_log(NULL, AV_LOG_ERROR, "the audio type is not AAC!\n");
         goto __ERROR;
     }else{
