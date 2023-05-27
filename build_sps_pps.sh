@@ -1,0 +1,1 @@
+gcc -o extract_sps_pps extract_sps_pps.c base64/buffer.c base64/encode.c base64/decode.c `pkg-config --cflags --libs libavcodec libavformat`

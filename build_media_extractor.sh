@@ -1,0 +1,1 @@
+gcc -o media_extractor media_extractor.c `pkg-config --cflags --libs libavcodec libavformat libavutil`
