@@ -1,0 +1,14 @@
+prefix=/Users/jefflee/source/FFmpegDemo/ffmpeg_dist
+exec_prefix=${prefix}
+libdir=/Users/jefflee/source/FFmpegDemo/ffmpeg_dist/lib
+includedir=/Users/jefflee/source/FFmpegDemo/ffmpeg_dist/include
+
+Name: libavutil
+Description: FFmpeg utility library
+Version: 58.2.100
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavutil -pthread -lm -lX11
+Libs.private: 
+Cflags: -I${includedir}
