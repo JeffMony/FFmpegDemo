@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>js调用c语言函数示例</title>
+  </head>
+  
+  <body>
+    <input id="video_file" type="file" />
+    <script>
+      //加载本地文件
+      var file=document.getElementById("video_file");
+      file.onchange = function(event) {
+        var sum = _add(3, 5);
+        console.log("sum=" + sum);
+      };
+    </script>
+    <script async type="text/javascript" src="add.js" ></script>
+  </body>
+
+  </html>

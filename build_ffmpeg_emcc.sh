@@ -28,7 +28,9 @@ emconfigure ./configure \
 --disable-doc \
 --disable-ffplay \
 --disable-ffprobe \
---disable-ffmpeg
+--disable-ffmpeg \
+--enable-static \
+--disable-shared
 
 
 make

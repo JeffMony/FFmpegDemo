@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>js调用c语言解析视频信息</title>
+  </head>
+  
+  <body>
+    <input id="video_file" type="file" />
+    <script>
+      // //加载本地文件
+      // var file = document.getElementById("video_file");
+      // file.onchange = function(event) {
+      //   var video_url = "./videos/test_1.mp4";
+      //   var ret = _extract_video_info(video_url);
+      //   console.log("ret = " + ret);
+      // };
+
+      Module = {};
+
+      Module.onRuntimeInitialized = function () {
+        var url = "http://127.0.0.1:8000/videos/test_1.mp4";
+        // 返回 uint8Array
+        var strBuffer = new TextEncoder().encode(url);
+        // 分配所需内存
+        var strPointer = Module._malloc(strBuffer.length + 1);
+        // 写入 uint8 缓冲区
+        Module.HEAPU8.set(strBuffer, strPointer);
+        // 以 0 结尾
+        Module.HEAPU8[strPointer + strBuffer.length] = 0;
+        var ret = Module._extract_video_info(strPointer);
+        console.log("ret = " + ret);
+        // 用完后释放内存
+        Module._free(strPointer);
+      }
+    </script>
+    <script async type="text/javascript" src="media_extractor.js" ></script>
+  </body>
+
+  </html>
