@@ -86,7 +86,7 @@ int packet_parse(const char *path) {
           if (nal_ref_idc == 0) {
             non_ref_packet_count++;
           }
-          printf("@ %d %d\n", nal_unit_type, nal_ref_idc);
+          // printf("@ %d %d\n", nal_unit_type, nal_ref_idc);
           // printf("# %hx %hx %hx %hx\n", packet.data[4], packet.data[5], packet.data[6], packet.data[7]);
         }
       }
