@@ -1,0 +1,14 @@
+prefix=/Users/jefflee/source/FFmpegDemo/ffmpeg_wasm_dist
+exec_prefix=${prefix}
+libdir=/Users/jefflee/source/FFmpegDemo/ffmpeg_wasm_dist/lib
+includedir=/Users/jefflee/source/FFmpegDemo/ffmpeg_wasm_dist/include
+
+Name: libpostproc
+Description: FFmpeg postprocessing library
+Version: 57.1.100
+Requires: libavutil >= 58.2.100
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lpostproc -lm
+Libs.private: 
+Cflags: -I${includedir}

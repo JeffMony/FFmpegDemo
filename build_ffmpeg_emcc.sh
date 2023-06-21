@@ -11,7 +11,7 @@ emconfigure ./configure \
 --cxx="em++" \
 --ar="emar" \
 --ranlib=emranlib \
---prefix=${CURRENT_DIR}/ffmpeg_dist \
+--prefix=${CURRENT_DIR}/ffmpeg_wasm_dist \
 --enable-cross-compile \
 --target-os=none \
 --arch=arm64 \
